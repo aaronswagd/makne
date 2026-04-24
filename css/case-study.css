@@ -263,6 +263,20 @@ h1, h2, h3 {
   margin-top: 20px;
 }
 
+/* Color values */
+.cs-color-values {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.cs-color-values span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.01em;
+}
 .cs-type-label {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.8rem;
