@@ -5,7 +5,8 @@
  * Handles:
  *  - Sticky navbar with blur effect
  *  - Smooth scrolling for anchor links
- *  - Scroll reveal animations (Intersection Observer)
+ *  - Scroll reveal animations for portfolio
+ *  - Existing service/testimonial/step reveals
  */
 
 (function () {
@@ -16,6 +17,7 @@
 
   // ========== STICKY NAVBAR ==========
   function handleScroll() {
+    if (!navbar) return;
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
     } else {
@@ -44,11 +46,49 @@
     });
   }
 
-  // ========== SCROLL REVEAL ==========
-  function initScrollReveal() {
-    const revealElements = document.querySelectorAll(
-      '.portfolio-item, .service-card, .testimonial, .step'
+  // ========== SCROLL REVEAL — PORTFOLIO PROJECTS ==========
+  function initPortfolioReveal() {
+    const projectCards = document.querySelectorAll('.project-card.reveal');
+
+    if (projectCards.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Optional: unobserve after reveal for performance
+            // observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px',
+      }
     );
+
+    projectCards.forEach((card) => {
+      observer.observe(card);
+    });
+
+    // Reveal cards already visible on load
+    window.addEventListener('load', () => {
+      projectCards.forEach((card) => {
+        if (card.getBoundingClientRect().top < window.innerHeight - 80) {
+          card.classList.add('visible');
+        }
+      });
+    });
+  }
+
+  // ========== SCROLL REVEAL — EXISTING ELEMENTS ==========
+  function initExistingReveal() {
+    const revealElements = document.querySelectorAll(
+      '.service-card, .testimonial, .step'
+    );
+
+    if (revealElements.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -63,14 +103,12 @@
     );
 
     revealElements.forEach((el) => {
-      // Set initial hidden state
       el.style.opacity = '0';
       el.style.transform = 'translateY(25px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
 
-    // Reveal elements already visible on load
     window.addEventListener('load', () => {
       revealElements.forEach((el) => {
         if (el.getBoundingClientRect().top < window.innerHeight) {
@@ -84,8 +122,8 @@
   // ========== INITIALIZE ==========
   function init() {
     initSmoothScroll();
-    initScrollReveal();
-    // Run once on load to set correct navbar state
+    initPortfolioReveal();
+    initExistingReveal();
     handleScroll();
   }
 
