@@ -335,40 +335,6 @@ h1, h2, h3 {
   color: #aaa;
 }
 
-/* GERO — Raleway demo */
-.gero-heading-demo {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 12px;
-  letter-spacing: 0.04em;
-  color: #0a0a0a;
-}
-
-.gero-body-demo {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #4a4a4a;
-  margin-bottom: 12px;
-}
-
-.gero-chars-black {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: #aaa;
-}
-
-.gero-chars-light {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: #aaa;
-}
-
 /* ==========================================
    6. LOGO GRID
    ========================================== */
@@ -497,14 +463,14 @@ h1, h2, h3 {
   transform: scale(1.06);
 }
 
-.cs-detail-item .cs-logo-card-label {
+/* Label del Design Process */
+.cs-process-label {
   display: block;
   text-align: left;
-  padding: 14px 4px;
+  padding: 12px 0 0 0;
   font-size: 0.85rem;
   color: #888;
   font-weight: 500;
-  background: transparent;
 }
 
 /* ==========================================
