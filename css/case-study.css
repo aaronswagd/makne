@@ -127,7 +127,7 @@ h1, h2, h3 {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #777;
   display: block;
   margin-bottom: 16px;
 }
@@ -242,7 +242,6 @@ h1, h2, h3 {
   margin-bottom: auto;
 }
 
-/* HEX */
 .color-hex {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.4rem;
@@ -252,7 +251,6 @@ h1, h2, h3 {
   letter-spacing: 0.02em;
 }
 
-/* Nombre */
 .color-name {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
@@ -263,7 +261,6 @@ h1, h2, h3 {
   opacity: 0.7;
 }
 
-/* Columnas */
 .color-columns {
   display: flex;
   gap: 30px;
@@ -338,7 +335,7 @@ h1, h2, h3 {
   color: #aaa;
 }
 
-/* GERO — Raleway demo classes */
+/* GERO — Raleway demo */
 .gero-heading-demo {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
@@ -373,7 +370,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   6. LOGO GRID 
+   6. LOGO GRID
    ========================================== */
 .cs-logo-grid {
   display: grid;
@@ -416,46 +413,6 @@ h1, h2, h3 {
   font-size: 0.85rem;
   color: #888;
   font-weight: 500;
-}
-
-/* Placeholders para texto (si no usas imágenes) */
-.cs-logo-placeholder {
-  background: #f5f5f5;
-  border-radius: 20px;
-  padding: 40px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 140px;
-}
-
-.cs-logo-placeholder--dark {
-  background: #1a1a1a;
-}
-
-.cs-logo-placeholder--outline {
-  background: #fff;
-  border: 1px dashed #d0d0d0;
-}
-
-.cs-logo-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-
-.cs-logo-text--light {
-  color: #fff;
-}
-
-.cs-logo-text--small {
-  font-size: 1.2rem;
-}
-
-.cs-logo-icon {
-  font-size: 2.4rem;
-  color: #0b0b0b;
 }
 
 /* ==========================================
@@ -515,11 +472,11 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 8px 25px rgba(0,0,0,0.04);
   transition: all 0.4s ease;
   cursor: pointer;
-  background: #fff;
+  background: transparent;
 }
 
 .cs-detail-item:hover {
@@ -532,6 +489,7 @@ h1, h2, h3 {
   height: 280px;
   object-fit: cover;
   display: block;
+  border-radius: 20px 20px 0 0;
   transition: transform 0.6s ease;
 }
 
@@ -539,15 +497,14 @@ h1, h2, h3 {
   transform: scale(1.06);
 }
 
-/* Label debajo de la imagen, alineado a la izquierda */
 .cs-detail-item .cs-logo-card-label {
   display: block;
   text-align: left;
-  padding: 14px 16px;
+  padding: 14px 4px;
   font-size: 0.85rem;
   color: #888;
   font-weight: 500;
-  background: #fff;
+  background: transparent;
 }
 
 /* ==========================================
@@ -637,7 +594,6 @@ h1, h2, h3 {
   transform: scale(1.03);
 }
 
-/* EMAIL */
 .cs-final-cta .contact-email {
   margin-top: 28px;
   font-size: 0.95rem;
