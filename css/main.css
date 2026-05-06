@@ -661,30 +661,27 @@ img {
 }
 
 /* ==========================================
-   TESTIMONIALS — AUTO CAROUSEL
+   TESTIMONIALS — COMPACT AUTO CAROUSEL
    ========================================== */
 .testimonials-section {
-  padding: 100px 0 60px;
+  padding: 80px 0 40px;
   overflow: hidden;
 }
 
 .testimonials-section .section-sub {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .testimonials-wrapper {
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .testimonials-track {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: testimonialScroll 30s linear infinite;
-  align-items: stretch;
+  animation: testimonialScroll 25s linear infinite;
 }
 
 .testimonials-track:hover {
@@ -692,27 +689,26 @@ img {
 }
 
 .testimonial-card {
-  flex: 0 0 380px;
+  flex: 0 0 400px;
   background: #f9f9f9;
-  border-radius: 24px;
-  padding: 32px 28px;
+  border-radius: 20px;
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  min-height: 160px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .testimonial-card .testimonial-quote {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #2c2c2c;
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.4;
+  margin-bottom: 12px;
 }
 
 .testimonial-card .testimonial-author {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #888;
   font-weight: 500;
 }
@@ -729,16 +725,15 @@ img {
 @media (max-width: 768px) {
   .testimonial-card {
     flex: 0 0 300px;
-    padding: 24px 20px;
-    min-height: 140px;
+    padding: 20px 20px;
   }
 
   .testimonial-card .testimonial-quote {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .testimonials-section {
-    padding: 60px 0 30px;
+    padding: 50px 0 30px;
   }
 }
 
