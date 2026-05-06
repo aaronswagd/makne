@@ -144,3 +144,29 @@ if (document.readyState === 'loading') {
 } else {
   initCarousel();
 }
+
+// ========== TESTIMONIALS ARROWS ==========
+function initTestimonialArrows() {
+  const track = document.getElementById('testimonialsTrack');
+  const prevBtn = document.getElementById('testimonialPrev');
+  const nextBtn = document.getElementById('testimonialNext');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const scrollAmount = 400;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTestimonialArrows);
+} else {
+  initTestimonialArrows();
+}
+
