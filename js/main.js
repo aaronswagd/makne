@@ -145,7 +145,7 @@ if (document.readyState === 'loading') {
   initCarousel();
 }
 
-// ========== TESTIMONIALS ARROWS ==========
+// ========== TESTIMONIALS ARROWS + INFINITE LOOP ==========
 function initTestimonialArrows() {
   const track = document.getElementById('testimonialsTrack');
   const prevBtn = document.getElementById('testimonialPrev');
@@ -155,12 +155,44 @@ function initTestimonialArrows() {
 
   const scrollAmount = 400;
 
+  // Duplicar tarjetas para loop infinito
+  const cards = track.querySelectorAll('.testimonial-card');
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
+
   prevBtn.addEventListener('click', () => {
     track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    checkLoop();
   });
 
   nextBtn.addEventListener('click', () => {
     track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    checkLoop();
+  });
+
+  // Loop infinito: cuando llega al final, vuelve al inicio
+  function checkLoop() {
+    setTimeout(() => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 10) {
+        track.scrollTo({ left: 0, behavior: 'instant' });
+      }
+      if (track.scrollLeft <= 10) {
+        track.scrollTo({ left: maxScroll - 400, behavior: 'instant' });
+      }
+    }, 400);
+  }
+
+  // También funciona con scroll táctil
+  track.addEventListener('scroll', () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (track.scrollLeft >= maxScroll - 5) {
+      setTimeout(() => {
+        track.scrollTo({ left: 0, behavior: 'instant' });
+      }, 300);
+    }
   });
 }
 
@@ -169,4 +201,3 @@ if (document.readyState === 'loading') {
 } else {
   initTestimonialArrows();
 }
-
